@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "1234",
+      "token": "fake-jwt-token"
+    }
+  ],
+  "cattle": [
+    {
+      "id": 1,
+      "breed": "Brahman",
+      "weight": 250,
+      "price": 85000,
+      "available": true
+    }
+  ]
+}
