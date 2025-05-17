@@ -14,6 +14,21 @@
       "weight": 250,
       "price": 85000,
       "available": true
+    },
+    {
+      "id": 2,
+      "breed": "Angus",
+      "weight": 650,
+      "price": 1200,
+      "available": true
+    },
+    {
+      "id": 3,
+      "breed": "Holstein",
+      "weight": 700,
+      "price": 1500,
+      "available": false
     }
   ]
 }
+

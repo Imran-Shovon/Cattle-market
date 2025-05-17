@@ -10,7 +10,7 @@ import { PricePipe } from '../../pipes/price.pipe';
   templateUrl: './cattle-list.component.html'
 })
 export class CattleListComponent {
-  cattle: any[] = [];
+  cattleList: any[] = [];
 
   constructor(private http: HttpClient) {
     this.fetchCattle();
@@ -19,7 +19,7 @@ export class CattleListComponent {
   fetchCattle() {
     this.http.get<any[]>('http://localhost:3000/cattle')
       .subscribe({
-        next: data => this.cattle = data,
+        next: data => this.cattleList = data,
         error: () => alert('Failed to fetch cattle!')
       });
   }
