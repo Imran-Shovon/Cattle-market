@@ -1,23 +1,27 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
-  <input formControlName="breed" placeholder="Breed" />
-  <div *ngIf="form.get('breed')?.invalid && form.get('breed')?.touched">
-    Breed is required.
-  </div>
+<div class="container mt-5">
+  <h3 class="mb-4 text-center">Add New Cattle</h3>
 
-  <input type="number" formControlName="weight" placeholder="Weight (kg)" />
-  <div *ngIf="form.get('weight')?.invalid && form.get('weight')?.touched">
-    Weight must be at least 100kg.
-  </div>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="mb-3">
+      <label for="breed" class="form-label">Breed</label>
+      <input type="text" class="form-control" formControlName="breed" />
+    </div>
 
-  <input type="number" formControlName="price" placeholder="Price (BDT)" />
-  <div *ngIf="form.get('price')?.invalid && form.get('price')?.touched">
-    Minimum price is ৳50,000.
-  </div>
+    <div class="mb-3">
+      <label for="weight" class="form-label">Weight (kg)</label>
+      <input type="number" class="form-control" formControlName="weight" />
+    </div>
 
-  <label>
-    Available:
-    <input type="checkbox" formControlName="available" />
-  </label>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price ($)</label>
+      <input type="number" class="form-control" formControlName="price" />
+    </div>
 
-  <button type="submit" [disabled]="form.invalid">Add</button>
-</form>
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" id="available" formControlName="available" />
+      <label class="form-check-label" for="available">Available</label>
+    </div>
+
+    <button class="btn btn-primary w-100" [disabled]="form.invalid">Add Cattle</button>
+  </form>
+</div>

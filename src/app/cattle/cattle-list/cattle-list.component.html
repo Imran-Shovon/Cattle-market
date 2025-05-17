@@ -1,6 +1,8 @@
-<!-- home.component.html -->
 <div class="container py-5">
   <h2 class="text-center mb-4">Available Cattle</h2>
+  <button type="submit" (click)="CattleAdd()" class="btn btn-success mb-3">
+    + Add New Cattle
+  </button>
 
   <div class="row g-4">
     <div *ngFor="let cow of cattleList" class="col-md-4">
@@ -9,10 +11,21 @@
           <h5 class="card-title">Breed: {{ cow.breed }}</h5>
           <p class="card-text mb-1">ID: {{ cow.id }}</p>
           <p class="card-text mb-1">Weight: {{ cow.weight }} kg</p>
-          <p class="card-text mb-1">Price: ${{ cow.price }}</p>
-          <span class="badge" [ngClass]="cow.available ? 'bg-success' : 'bg-secondary'">
-            {{ cow.available ? 'Available' : 'Sold Out' }}
+          <p class="card-text mb-1">Price: ${{ cow.price | price }}</p>
+
+          <span
+            class="badge mb-2"
+            [ngClass]="cow.available ? 'bg-success' : 'bg-secondary'"
+          >
+            {{ cow.available ? "Available" : "Sold Out" }}
           </span>
+
+          <button
+            (click)="toggleAvailability(cow)"
+            class="btn btn-outline-primary btn-sm w-100"
+          >
+            Mark as {{ cow.available ? "Sold" : "Available" }}
+          </button>
         </div>
       </div>
     </div>

@@ -14,4 +14,13 @@ export class CattleService {
   getCattle(): Observable<Cattle[]> {
     return this.http.get<Cattle[]>(this.apiUrl);
   }
+
+  updateCattleAvailability(id: number, available: boolean): Observable<any> {
+  return this.http.patch(`${this.apiUrl}/${id}`, { available });
+ }
+
+ addCattle(cow: Cattle): Observable<Cattle> {
+  return this.http.post<Cattle>(this.apiUrl, cow);
+}
+
 }
