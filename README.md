@@ -56,7 +56,7 @@ ng serve
     {
       "id": 1,
       "username": "admin",
-      "password": "admin123",
+      "password": "1234",
       "token": "fake-jwt-token"
     }
   ]
